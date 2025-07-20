@@ -16,7 +16,7 @@ client.on('messageCreate', (message) => {
         return
     }
     if (message.content.includes("essentially")) {
-        message.reply('essentially :percyshine:')
+        message.reply('essentially <:percyshine:837514010404323449>')
     }
 })
 
