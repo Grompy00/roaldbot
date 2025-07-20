@@ -15,7 +15,7 @@ client.on('messageCreate', (message) => {
     if(message.author.bot){
         return
     }
-    if (message.content.includes("essentially")) {
+    if (message.content.toLowerCase().includes("essentially")) {
         message.reply('essentially <:percyshine:837514010404323449>')
     }
 })
