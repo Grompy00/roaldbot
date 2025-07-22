@@ -19,7 +19,7 @@ client.on('messageCreate', (message) => {
         message.reply('essentially <:percyshine:837514010404323449>')
     }
 })
-
+//Respond with "Yeg"
 client.on('messageCreate', (message) => {
     if(message.author.bot){
         return
@@ -27,6 +27,17 @@ client.on('messageCreate', (message) => {
     let randomNum = Math.floor(Math.random() * 1000)
     if(message.content.includes("") && randomNum === 99){
         message.reply('Yeg')
+    }
+
+})
+
+client.on('messageCreate', (message) => {
+    if(message.author.bot){
+        return
+    }
+    let randomNum = Math.floor(Math.random() * 250)
+    if(message.content.includes("") && randomNum === 99){
+        message.reply('#KeepItKrunk')
     }
 
 })
