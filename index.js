@@ -10,6 +10,11 @@ const client = new Client({
   ],
 });
 
+const oneInNChance = (n) => {
+    if (n <= 0) throw new Error("N must be a positive integer");
+    return Math.floor(Math.random() * n) === 0;
+  }
+
 client.on("messageCreate", (message) => {
   // Nothing if the message was from Roald
   if (message.author.bot) {
@@ -19,29 +24,23 @@ client.on("messageCreate", (message) => {
   // Respond with "Essentially"
   if (message.content.toLowerCase().includes("essentially")) {
     message.reply("essentially <:percyshine:837514010404323449>");
-    return;
   }
-
-  let randomNum = Math.floor(Math.random() * 1000);
 
   // Respond with "Go fuck yourself."
   if (message.content.trim().toLowerCase() === "yeg") {
-    if (randomNum % 10 === 2) {
+    if (oneInNChance(10)) {
       message.reply("Go fuck yourself.");
-      return;
     }
   }
 
   // Respond with "Yeg"
-  if (message.content.includes("") && randomNum <= 1) {
+  if (message.content.includes("") && oneInNChance(1000)) {
     message.reply("Yeg");
-    return;
   }
 
   // Respond with "#KeepItKrunk"
-  if (message.content.includes("") && randomNum > 1 && randomNum <= 5) {
+  if (message.content.includes("") && oneInNChance(250)) {
     message.reply("#KeepItKrunk");
-    return;
   }
 });
 
