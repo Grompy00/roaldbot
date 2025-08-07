@@ -30,7 +30,7 @@ client.on("messageCreate", (message) => {
     message.reply("essentially <:percyshine:837514010404323449>");
   }
 
-  const existingYegsForUser = userYegMap.get(user.id);
+  let existingYegsForUser = userYegMap.get(user.id);
 
   // Respond with "Go fuck yourself."
   if (message.content.trim().toLowerCase() === "yeg") {
@@ -46,7 +46,7 @@ client.on("messageCreate", (message) => {
 
     // For every yeg, the Go fuck yourself chance increases
     const goFuckYourselfChance = Math.max(1, 10 - existingYegsForUser);
-    if (goFuckYourselfChance) {
+    if (oneInNChance(goFuckYourselfChance)) {
       message.reply("Go fuck yourself.");
     }
   }
