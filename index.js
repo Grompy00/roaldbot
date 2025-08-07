@@ -25,6 +25,11 @@ client.on('messageCreate', (message) => {
         return
     }
     let randomNum = Math.floor(Math.random() * 1000)
+    if(message.content.trim().toLowerCase() === "yeg"){
+        if(randomNum % 10 === 2)
+            message.reply('go fuck yourself')
+        return;
+    }
     if(message.content.includes("") && randomNum === 99){
         message.reply('Yeg')
     }
