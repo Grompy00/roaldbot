@@ -46,7 +46,7 @@ client.on("messageCreate", (message) => {
 
     // For every yeg, the Go fuck yourself chance increases
     const goFuckYourselfChance = Math.max(1, 10 - existingYegsForUser);
-    if (goFuckYourselfChance) {
+    if (oneInNChance(goFuckYourselfChance)) {
       message.reply("Go fuck yourself.");
     }
   }
